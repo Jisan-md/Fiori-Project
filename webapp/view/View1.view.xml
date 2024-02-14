@@ -1,37 +1,65 @@
-<mvc:View controllerName="smartbar.controller.View1"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+<mvc:View
+    controllerName="smartbar.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
     xmlns="sap.m"
-    	xmlns:f="sap.f"
+    xmlns:f="sap.f"
     xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
     xmlns:smarttable="sap.ui.comp.smarttable"
+>
+    <f:DynamicPage
+        id="dynamicPage1"
+        fitContent="true"
     >
-
-	<f:DynamicPage id="dynamicPage1" fitContent="true" >
-		<f:header>
-			<f:DynamicPageHeader>   
-                
-            <smartFilterBar:SmartFilterBar id="idsmartFilterBar" entitySet="Customers" enableBasicSearch="true" basicSearchFieldName="CompanyName">
-              	<smartFilterBar:controlConfiguration>
-				    <smartFilterBar:ControlConfiguration id="idcustomer" key="CustomerID" label="Customer ID" visibleInAdvancedArea="true" />
-                    <smartFilterBar:ControlConfiguration id="idCompanyName" key="CompanyName" label="Company Name" visibleInAdvancedArea="true" />
-                    <smartFilterBar:ControlConfiguration id="idcirt" key="City" label="City" visibleInAdvancedArea="true" />
-
-                </smartFilterBar:controlConfiguration>
-
-            </smartFilterBar:SmartFilterBar>
-    	</f:DynamicPageHeader>
-		</f:header>
-             <f:content>
-            <smarttable:SmartTable id="idsmartTable" smartFilterId="idsmartFilterBar" tableType="ResponsiveTable" entitySet="Customers"
-             enableAutoBinding="true" initiallyVisibleFields="CustomerID,CompanyName,City,Phone,Address">
-              <Table id="idResponsiveTable"  mode="SingleSelectMaster" selectionChange="handleSelectionChange" alternateRowColors="true" >
-
-              </Table>
-
+        <f:header>
+            <f:DynamicPageHeader>
+            
+                <smartFilterBar:SmartFilterBar
+                    id="idsmartFilterBar"
+                    entitySet="Customers"
+                    enableBasicSearch="true"
+                    basicSearchFieldName="CompanyName"
+                >
+                    <smartFilterBar:controlConfiguration>
+                        <smartFilterBar:ControlConfiguration
+                            id="idcustomer"
+                            key="CustomerID"
+                            label="Customer ID"
+                            visibleInAdvancedArea="true"
+                        />
+                        <smartFilterBar:ControlConfiguration
+                            id="idCompanyName"
+                            key="CompanyName"
+                            label="Company Name"
+                            visibleInAdvancedArea="true"
+                        />
+                        <smartFilterBar:ControlConfiguration
+                            id="idcity"
+                            key="City"
+                            label="City"
+                            visibleInAdvancedArea="true"
+                        />
+                    </smartFilterBar:controlConfiguration>
+                </smartFilterBar:SmartFilterBar>
+            </f:DynamicPageHeader>
+        </f:header>
+        <f:content>
+         
+            <smarttable:SmartTable
+                id="idsmartTable"
+                smartFilterId="idsmartFilterBar"
+                tableType="ResponsiveTable"
+                entitySet="Customers"
+                enableAutoBinding="true"
+                initiallyVisibleFields="CustomerID,CompanyName,City,Phone,Address"
+            >
+                <Table
+                    id="idResponsiveTable"
+                    mode="SingleSelectMaster"
+                    selectionChange="handleSelectionChange"
+                    alternateRowColors="true"
+                />
             </smarttable:SmartTable>
         </f:content>
-	</f:DynamicPage>
-    </mvc:View>
-
-
-
+    </f:DynamicPage>
+</mvc:View>

@@ -1,0 +1,56 @@
+<mvc:View controllerName="smartbar.controller.details"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:smartForm="sap.ui.comp.smartform"
+    xmlns:smartField="sap.ui.comp.smartfield"
+    >
+
+    <Page id="page" title="Detail Page" titleAlignment="Center">
+        <content>
+              <smartForm:SmartForm
+            id="smartFormId"
+            editable="true"
+        >
+            <smartForm:Group>
+                <smartForm:GroupElement>
+                    <Label text="Invoice Number" />
+                    <Input
+                        value="{ModelData>Supplierinvoice}"
+                        editable="false"
+                    />
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <Label text="Invoice Gross Amount" />
+                    <Input value="{ModelData>Invoicegrossamount}" />
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <Label text="Fiscal Year" />
+                    <Input value="{ModelData>Fiscalyear}" />
+                </smartForm:GroupElement>
+                <smartForm:GroupElement>
+                    <Label text="Document Date" />
+                    <Input value="{ModelData>Documentdate}" />
+                </smartForm:GroupElement>
+            </smartForm:Group>
+        </smartForm:SmartForm>
+ 
+        </content>
+    </Page>    
+</mvc:View>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

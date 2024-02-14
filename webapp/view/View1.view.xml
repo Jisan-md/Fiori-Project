@@ -6,7 +6,7 @@
     xmlns:smarttable="sap.ui.comp.smarttable"
     >
 
-	<f:DynamicPage id="dynamicPage" fitContent="true" >
+	<f:DynamicPage id="dynamicPage1" fitContent="true" >
 		<f:header>
 			<f:DynamicPageHeader>   
                 
